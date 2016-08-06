@@ -13,6 +13,7 @@
 		38298B5D1D55F7D400172321 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38298B5B1D55F7D400172321 /* LaunchScreen.storyboard */; };
 		38298B661D55F7F000172321 /* LYRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38298B651D55F7F000172321 /* LYRootViewController.m */; };
 		38298B691D55F86800172321 /* LYUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 38298B681D55F86800172321 /* LYUncaughtExceptionHandler.m */; };
+		38298B6C1D560F2800172321 /* LYDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38298B6B1D560F2800172321 /* LYDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		38298B651D55F7F000172321 /* LYRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYRootViewController.m; sourceTree = "<group>"; };
 		38298B671D55F86800172321 /* LYUncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYUncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		38298B681D55F86800172321 /* LYUncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYUncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		38298B6A1D560F2800172321 /* LYDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYDetailViewController.h; sourceTree = "<group>"; };
+		38298B6B1D560F2800172321 /* LYDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				38298B511D55F7D400172321 /* AppDelegate.m */,
 				38298B641D55F7F000172321 /* LYRootViewController.h */,
 				38298B651D55F7F000172321 /* LYRootViewController.m */,
+				38298B6A1D560F2800172321 /* LYDetailViewController.h */,
+				38298B6B1D560F2800172321 /* LYDetailViewController.m */,
 				38298B671D55F86800172321 /* LYUncaughtExceptionHandler.h */,
 				38298B681D55F86800172321 /* LYUncaughtExceptionHandler.m */,
 				38298B591D55F7D400172321 /* Assets.xcassets */,
@@ -152,6 +157,7 @@
 			files = (
 				38298B691D55F86800172321 /* LYUncaughtExceptionHandler.m in Sources */,
 				38298B521D55F7D400172321 /* AppDelegate.m in Sources */,
+				38298B6C1D560F2800172321 /* LYDetailViewController.m in Sources */,
 				38298B4F1D55F7D400172321 /* main.m in Sources */,
 				38298B661D55F7F000172321 /* LYRootViewController.m in Sources */,
 			);
@@ -292,6 +298,7 @@
 				38298B631D55F7D400172321 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
