@@ -35,9 +35,9 @@
     [pushBtn addTarget:self action:@selector(handlePushButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:pushBtn];
     // 打开异常捕获
-//    InstallUncaughtExceptionHandler();
+    InstallUncaughtExceptionHandler();
     
-    NSSetUncaughtExceptionHandler(&UncaughtExceptionHandler);// 1.开始捕获异常
+//    NSSetUncaughtExceptionHandler(&UncaughtExceptionHandler);// 1.开始捕获异常
 }
 
 - (void)handleButtonAction:(UIButton *)sender {
@@ -50,35 +50,35 @@
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
-// 2.在方法里做异常的捕获和处理
-void UncaughtExceptionHandler(NSException *exception) {
-    //不退出是因为waitUntilDone设置为YES
-    [[[LYRootViewController alloc] init] performSelectorOnMainThread:@selector(handleException:) withObject:exception waitUntilDone:YES];
-}
-- (void)handleException:(NSException *)exception {
-    // 获取异常崩溃信息
-    NSArray *callStack = [exception callStackSymbols];
-    NSString *reason = [exception reason];
-    NSString *name = [exception name];
-    NSString *content = [NSString stringWithFormat:@"========异常错误报告========\nname:%@\nreason:\n%@\ncallStackSymbols:\n%@",name,reason,[callStack componentsJoinedByString:@"\n"]];
-    NSLog(@"%@", content);
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"警告" message:@"程序发生错误，是否退出？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    [alertView show];
-    
-    CFRunLoopRef runLoop = CFRunLoopGetCurrent();
-    CFArrayRef allModes = CFRunLoopCopyAllModes(runLoop);
-    
-    while (!self.exit) {
-        for (NSString *mode in (__bridge NSArray *)allModes) {
-            CFRunLoopRunInMode((CFStringRef)mode, 0.001, false);
-        }
-    }
-}
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 1) {
-        self.exit = YES;
-    }
-}
+//// 2.在方法里做异常的捕获和处理
+//void UncaughtExceptionHandler(NSException *exception) {
+//    //不退出是因为waitUntilDone设置为YES
+//    [[[LYRootViewController alloc] init] performSelectorOnMainThread:@selector(handleException:) withObject:exception waitUntilDone:YES];
+//}
+//- (void)handleException:(NSException *)exception {
+//    // 获取异常崩溃信息
+//    NSArray *callStack = [exception callStackSymbols];
+//    NSString *reason = [exception reason];
+//    NSString *name = [exception name];
+//    NSString *content = [NSString stringWithFormat:@"========异常错误报告========\nname:%@\nreason:\n%@\ncallStackSymbols:\n%@",name,reason,[callStack componentsJoinedByString:@"\n"]];
+//    NSLog(@"%@", content);
+//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"警告" message:@"程序发生错误，是否退出？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+//    [alertView show];
+//    
+//    CFRunLoopRef runLoop = CFRunLoopGetCurrent();
+//    CFArrayRef allModes = CFRunLoopCopyAllModes(runLoop);
+//    
+//    while (!self.exit) {
+//        for (NSString *mode in (__bridge NSArray *)allModes) {
+//            CFRunLoopRunInMode((CFStringRef)mode, 0.001, false);
+//        }
+//    }
+//}
+//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+//    if (buttonIndex == 1) {
+//        self.exit = YES;
+//    }
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
